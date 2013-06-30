@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block extra_js %}
+
+<script type="text/javascript">
+$( document ).ready( function() {
+    $( '#search' ).click( function() {
+        q = $( '#q' ).val();
+        $( '#results' ).html( '&nbsp;' ).load( '{% url search %}?q=' + q );
+    });
+});
+
+</script>
+
+{% endblock %}
+
+{% block main %}
+
+<div>
+    <input id="q" type="text"/>
+    <input id="search" type="submit" value="Search"/>
+    <br/>
+    <span>Search Contacts here..</span>
+    
+    <div id="results"></div>
+
+</div>
+{% endblock %}
