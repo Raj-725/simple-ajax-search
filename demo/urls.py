@@ -3,5 +3,5 @@ from demo.views import *
 
 urlpatterns = patterns( '',
 	url( r'^$', index, name = 'index' ),
-	url( r'^users/$', search, name = 'search' ),
+	url( r'^search/$', search, name = 'search' ),
 ) 

@@ -4,7 +4,7 @@
 
 <script type="text/javascript">
 $( document ).ready( function() {
-    $( '#searchSubmit' ).click( function() {
+    $( '#q' ).keyup( function() {
         q = $( '#q' ).val();
         $( '#results' ).html( '&nbsp;' ).load( '{% url search %}?q=' + q );
     });
@@ -14,13 +14,12 @@ $( document ).ready( function() {
 
 {% endblock %}
 
-{% block main %}
+{% block content %}
 
-<div>
-    <input id="q" type="text"/>
-    <input id="searchSubmit" type="submit" value="Search"/>
+<div class="form-signin">
+    <h2 class="form-signin-heading" title="Type in contact name">Search Contacts</h2>
+	<input id="q" type="text"/>
     <br/>
-    <span class="hint">Type in a query string to search for users</span>
     <div class="margin">
         <div id="results"></div>
     </div>
