@@ -14,6 +14,8 @@ def search(request):
     if request.is_ajax():
         q = request.GET.get('q')
         if q is not None:            
-            results = Contact.objects.filter(name__contains=q)            
+            results = Contact.objects.filter(  
+            	Q( name__contains = q ) |
+                Q( city__contains = q ) )          
             return render_to_response('results.html', {'results': results}, 
                                        context_instance = RequestContext(request))
