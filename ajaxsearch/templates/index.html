@@ -4,7 +4,7 @@
 
 <script type="text/javascript">
 $( document ).ready( function() {
-    $( '#search' ).click( function() {
+    $( '#searchSubmit' ).click( function() {
         q = $( '#q' ).val();
         $( '#results' ).html( '&nbsp;' ).load( '{% url search %}?q=' + q );
     });
@@ -17,13 +17,12 @@ $( document ).ready( function() {
 {% block main %}
 
 <div>
-	<h2><span>Search Contacts here..</span></h2>
     <input id="q" type="text"/>
-    <input id="search" type="submit" value="Search"/>
+    <input id="searchSubmit" type="submit" value="Search"/>
     <br/>
-    
-    
-    <div id="results"></div>
-
+    <span class="hint">Type in a query string to search for users</span>
+    <div class="margin">
+        <div id="results"></div>
+    </div>
 </div>
 {% endblock %}

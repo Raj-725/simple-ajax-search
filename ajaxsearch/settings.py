@@ -1,16 +1,15 @@
 # Django settings for ajaxsearch project.
 import os
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('benson', 'bensonnjogu@gmail.com'),
+    # ('Your Name', 'your_email@example.com'),
 )
 
-MANAGERS = ADMINS
-
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+
+MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
@@ -70,7 +69,6 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(SITE_ROOT, 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -82,7 +80,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'n(+*=^ff6714vb_xl$#i9m1lph0bx)d+7&amp;pc52b6t7x4)fm=op'
+SECRET_KEY = 'j+qsbgf-*$*^w%8uo#1-s*9^!j^st_fcicy234-#ne4!$-52v#'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -120,8 +118,12 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-	'demo',
+    'demo',
+    # Uncomment the next line to enable admin documentation:
+    # 'django.contrib.admindocs',
 )
 
 # A sample logging configuration. The only tangible logging
